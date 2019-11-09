@@ -1,12 +1,10 @@
 <template>
-  <section class="container">
-    <div class="columns is-multiline">
-      <div v-for="(item, i) in breed_list" v-bind:key="i" class="column is-2">
-        <!-- <a class="button">{{ i }}</a> -->
-        <nuxt-link :to="{ path: 'dogs/'+ i }" class="button">{{ i }}</nuxt-link>
-      </div>
-    </div>
-  </section>
+  <v-layout wrap justify-space-between>
+    <v-flex v-for="(item, i) in breed_list" v-bind:key="i" column xs6 sm4 md3>
+      <!-- <a class="button">{{ i }}</a> -->
+      <v-btn nuxt-link :to="{ path: 'dogs/'+ i }" style="width: 100%">{{ i }}</v-btn>
+    </v-flex>
+  </v-layout>
 </template>
  
 <script>
